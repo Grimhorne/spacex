@@ -1,7 +1,8 @@
 import {useState, useEffect} from 'react';
+import SiteSelectForm from 'components/SiteSelectForm';
 
 const App = () => {
-    const [src, setSrc] = useState({});
+    const [src, setSrc] = useState([]);
     const spaceXdata = 'spacex.json';
 
     const getData = () => {
@@ -12,32 +13,25 @@ const App = () => {
             }
         };
 
-      fetch(spaceXdata, fetchOptions)
+    fetch(spaceXdata, fetchOptions)
         .then((res)=>{
-          return res.json()
+            return res.json()
         })
         .then((res)=>{
-            setSrc(res)
+            setSrc(res.data.launches);
         })
         .catch((err) => {
-          console.error(err)
+            console.error(err)
         });
-  }
+    }
 
     useEffect(()=>{
-        getData();
+        if(!src.length) getData();
     });
 
   return (
     <div className="app">
-        <div>
-            <label>Site Name</label>
-            <select>
-                <option>Select a site</option>
-                <option>Site 1</option>
-                <option>Site 2</option>
-            </select>
-        </div>
+        <SiteSelectForm data={src} />
         <div>
             <img src="https://picsum.photos/id/537/300/200" alt="" />
             <div>Add a description of the image here</div>
