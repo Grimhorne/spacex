@@ -1,4 +1,33 @@
+import {useState, useEffect} from 'react';
+
 const App = () => {
+    const [src, setSrc] = useState({});
+    const spaceXdata = 'spacex.json';
+
+    const getData = () => {
+        const fetchOptions = {
+            headers:{
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            }
+        };
+
+      fetch(spaceXdata, fetchOptions)
+        .then((res)=>{
+          return res.json()
+        })
+        .then((res)=>{
+            setSrc(res)
+        })
+        .catch((err) => {
+          console.error(err)
+        });
+  }
+
+    useEffect(()=>{
+        getData();
+    });
+
   return (
     <div className="app">
         <div>
