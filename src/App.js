@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react';
 import SiteSelectForm from 'components/SiteSelectForm';
+import Launches from 'components/Launches';
 
 const App = () => {
     const [src, setSrc] = useState([]);
@@ -32,23 +33,7 @@ const App = () => {
   return (
     <div className="app">
         <SiteSelectForm data={src} />
-        <div>
-            <img src="https://picsum.photos/id/537/300/200" alt="" />
-            <div>Add a description of the image here</div>
-        </div>
-        <div>
-            <p>launch date</p>
-            <p>launch site name</p>
-            <p>launch year</p>
-            <p>rocket</p>
-            <p>article</p>
-        </div>
-        <div>
-            <div><img src="https://picsum.photos/id/537/64/64" alt="" /></div>
-            <div><img src="https://picsum.photos/id/537/64/64" alt="" /></div>
-            <div><img src="https://picsum.photos/id/537/64/64" alt="" /></div>
-            <div><img src="https://picsum.photos/id/537/64/64" alt="" /></div>
-        </div>
+        <Launches data={src} />
     </div>
   );
 }

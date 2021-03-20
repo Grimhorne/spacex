@@ -9,7 +9,7 @@ const SiteSelectForm = (props) => {
         <div>
             <label>Site Name</label>
             <select>
-                <SiteSelectOption label="Select a site" value="-1" />
+                <SiteSelectOption label="All sites" value="-1" />
                 {
                     sites.map((item, idx) => {
                         return (<SiteSelectOption key={idx} label={item} value={idx} />);
