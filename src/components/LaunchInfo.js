@@ -1,11 +1,13 @@
+import LaunchInfoItem from 'components/LaunchInfoItem';
+
 const LaunchInfo = (props) => {
     return (
         <div class="info-list">
-            <p>launch date</p>
-            <p>launch site name</p>
-            <p>launch year</p>
-            <p>rocket</p>
-            <p>article</p>
+            <LaunchInfoItem label="launch date" value="tbd"/>
+            <LaunchInfoItem label="launch site name" value="tbd"/>
+            <LaunchInfoItem label="launch year" value="tbd"/>
+            <LaunchInfoItem label="rocket" value="tbd"/>
+            <LaunchInfoItem label="article" value="tbd"/>
         </div>
     );
 }

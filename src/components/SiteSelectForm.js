@@ -6,7 +6,7 @@ const SiteSelectForm = (props) => {
     });
 
     return (
-        <div>
+        <div className="site-select">
             <label>Site Name</label>
             <select>
                 <SiteSelectOption label="All sites" value="-1" />

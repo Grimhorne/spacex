@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react';
 import SiteSelectForm from 'components/SiteSelectForm';
 import Launches from 'components/Launches';
+import 'scss/App.scss';
 
 const App = () => {
     const [src, setSrc] = useState([]);

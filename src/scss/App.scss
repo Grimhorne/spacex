@@ -1,0 +1,40 @@
+.app {
+    border: 1px solid #666;
+}
+
+.site-select {
+    padding: 20px;
+}
+
+.launch-list {
+    padding: 20px;
+    border-top: 1px solid #666;
+}
+
+.launch-item {
+    border-top: 1px solid #ccc;
+
+    & + .launch-item {
+        margin-top: 20px;
+        padding-top: 20px;
+    }
+
+    .hero,
+    .info-list,
+    .gallery {
+        border: 1px solid #999;
+    }
+
+    .info-list,
+    .gallery {
+        margin-top: 20px;
+    }
+
+    .info-list-item {
+        padding: 5px 20px;
+
+        & + .info-list-item {
+            border-top: 1px solid #ccc;
+        }
+    }
+}
