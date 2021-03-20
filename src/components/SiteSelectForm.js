@@ -1,18 +1,31 @@
+import {useLaunchSiteContext} from 'components/LaunchSiteContext';
+
 const SiteSelectForm = (props) => {
-    const sites = props.data.map((item) => {
+    // use content to easily share data between components
+    const site = useLaunchSiteContext();
+
+    // generate an array only with unique site values
+    let siteOptions = props.data.map((item) => {
         return item.launch_site.site_name_long;
     }).filter((val, idx, self) => {
         return self.indexOf(val) === idx;
     });
 
+    // array merge to include an 'all sites' option
+    siteOptions = ['All sites', ...siteOptions];
+
+    // on change handler for launch sites
+    const handleSiteChange = (e) => {
+        site.setCurrentSite(e.target.value);
+    }
+
     return (
         <div className="site-select">
             <label>Site Name</label>
-            <select>
-                <SiteSelectOption label="All sites" value="-1" />
+            <select onChange={handleSiteChange}>
                 {
-                    sites.map((item, idx) => {
-                        return (<SiteSelectOption key={idx} label={item} value={idx} />);
+                    siteOptions.map((item, idx) => {
+                        return (<SiteSelectOption key={idx} label={item} value={item} />);
                     })
                 }
             </select>
