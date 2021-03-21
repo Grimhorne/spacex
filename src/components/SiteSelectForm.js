@@ -12,11 +12,12 @@ const SiteSelectForm = (props) => {
     });
 
     // array merge to include an 'all sites' option
-    siteOptions = ['All sites', ...siteOptions];
+    const allSites = 'All sites';
+    siteOptions = [allSites, ...siteOptions];
 
     // on change handler for launch sites
     const handleSiteChange = (e) => {
-        site.setCurrentSite(e.target.value);
+        site.setCurrentSite((e.target.value !== allSites) ? e.target.value : null);
     }
 
     return (

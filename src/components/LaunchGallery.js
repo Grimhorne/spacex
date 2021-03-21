@@ -1,10 +1,7 @@
 const LaunchGallery = (props) => {
     return (
         <div className="gallery">
-            <div><img src="https://picsum.photos/id/537/64/64" alt="d" /></div>
-            <div><img src="https://picsum.photos/id/537/64/64" alt="d" /></div>
-            <div><img src="https://picsum.photos/id/537/64/64" alt="d" /></div>
-            <div><img src="https://picsum.photos/id/537/64/64" alt="d" /></div>
+            {props.images.map((item, idx) => {return (<div key={idx}><img src={item} alt="d" width="100" /></div>)})}
         </div>
     );
 }

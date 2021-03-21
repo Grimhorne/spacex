@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react';
-import Launches from 'components/Launches';
+import LaunchList from 'components/LaunchList';
 import LaunchSite from 'components/LaunchSite';
 import Loading from 'components/Loading';
 import SiteSelectForm from 'components/SiteSelectForm';
@@ -46,7 +46,7 @@ const App = () => {
             // render the application components
             return (<>
                 <SiteSelectForm data={src} />
-                <Launches data={src} />
+                <LaunchList data={src} />
             </>);
         }
     };
