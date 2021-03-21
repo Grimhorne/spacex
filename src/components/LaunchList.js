@@ -12,8 +12,16 @@ const LaunchList = (props) => {
 
     return (
         <div className="launch-list">
-            <h1>{site.currentSite || 'All Sites'}</h1>
-            {launchList.map((item) => {return (<LaunchListItem data={item} />)})}
+            <section className="hero is-primary">
+              <div className="hero-body">
+                <p className="title">
+                  {site.currentSite || 'All Sites'}
+                </p>
+              </div>
+            </section>
+            <section className="section columns is-multiline">
+            {launchList.map((item) => {return (<LaunchListItem key={item.id} data={item} />)})}
+            </section>
         </div>
     );
 }

@@ -9,9 +9,10 @@ const LaunchHero = (props) => {
     const heroImage = (props.images.length > 0) ? props.images[0] : rocket_placeholder;
 
     return (
-        <div className="hero">
-            <img src={heroImage} alt={heroDescription} width="620"/>
-            <div className="caption">{heroDescription}</div>
+        <div className="hero card-image">
+            <figure className="image is-5by3">
+                <img src={heroImage} alt={heroDescription} />
+            </figure>
         </div>
     );
 }

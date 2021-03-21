@@ -53,7 +53,7 @@ const App = () => {
 
     return (
         <LaunchSite>
-            <div className="app">
+            <div className="app container">
                 <RenderApp />
             </div>
         </LaunchSite>
