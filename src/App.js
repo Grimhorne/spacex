@@ -5,6 +5,7 @@ import Loading from 'components/Loading';
 import SiteSelectForm from 'components/SiteSelectForm';
 
 import 'scss/App.scss';
+import 'react-image-lightbox/style.css';
 
 const App = () => {
     const [src, setSrc] = useState([]);
