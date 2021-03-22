@@ -1,4 +1,7 @@
-html,
-body {
-    background-color: #666;
+// import bulma's initial sass variables
+@import "~bulma/sass/utilities/initial-variables";
+
+html {
+    background-color: $orange;
+    background: linear-gradient(0deg, $grey 0%, $grey-darker 100%);
 }

@@ -29,7 +29,7 @@ const LaunchList = (props) => {
 
     // render
     return (
-    <div className="launch-list container pt-4 pb-4">
+    <div className="launch-list container pt-4 mb-6">
         <Slider {...settings}>
         {launchList.map((item) => {return (<LaunchListItem key={item.id} data={item} />)})}
         </Slider>
