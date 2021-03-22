@@ -1,3 +1,4 @@
+// import hooks and components
 import { useState } from 'react';
 import LaunchSiteContext from 'components/LaunchSiteContext';
 
@@ -6,6 +7,7 @@ const useProvideLaunchSite = () => {
     const [currentSite, setCurrentSite] = useState(null);
     const [currentLaunch, setCurrentLaunch] = useState(null);
 
+    // expose properties and methods accessible via context
     return {
         currentSite,
         currentLaunch,
@@ -15,8 +17,10 @@ const useProvideLaunchSite = () => {
 }
 
 const LaunchSite = ({ children }) => {
+    // set context value
     const site = useProvideLaunchSite();
 
+    // setup context provider
     return (
         <LaunchSiteContext.Provider value={site}>
             {children}

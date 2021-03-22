@@ -1,5 +1,11 @@
+// import carousel styles
+import "scss/slick.scss";
+import "scss/slick-theme.scss";
+
+// import hooks and components
 import LaunchListItem from 'components/LaunchListItem';
 import {useLaunchSiteContext} from 'components/LaunchSiteContext';
+import Slider from "react-slick";
 
 const LaunchList = (props) => {
     // use content to easily share data between components
@@ -10,19 +16,24 @@ const LaunchList = (props) => {
         return !site.currentSite || item.launch_site.site_name_long === site.currentSite;
     });
 
+    // slider settings. see `https://react-slick.neostack.com/docs/api`
+    const settings = {
+        dots: true,
+        lazyload: true,
+        fade: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1
+    };
+
+    // render
     return (
-        <div className="launch-list">
-            <section className="hero is-primary">
-              <div className="hero-body">
-                <p className="title">
-                  {site.currentSite || 'All Sites'}
-                </p>
-              </div>
-            </section>
-            <section className="section columns is-multiline">
-            {launchList.map((item) => {return (<LaunchListItem key={item.id} data={item} />)})}
-            </section>
-        </div>
+    <div className="launch-list container pt-4 pb-4">
+        <Slider {...settings}>
+        {launchList.map((item) => {return (<LaunchListItem key={item.id} data={item} />)})}
+        </Slider>
+    </div>
     );
 }
 
