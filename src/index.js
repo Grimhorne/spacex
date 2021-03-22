@@ -1,9 +1,13 @@
+// import application stylesheet
+import 'scss/index.scss';
+
+// import hooks and components
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import 'scss/index.scss';
 
+// render
 ReactDOM.render(
   <React.StrictMode>
     <App />
